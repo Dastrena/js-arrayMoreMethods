@@ -6,7 +6,6 @@
 function getPopularCategories(products) {
   const filteredProducts = products.filter(product => product.sales > 5);
 
-  // Створюємо мапу категорій і сумуємо кількість продажів для кожної категорії
   const salesMap = {};
   filteredProducts.forEach(product => {
     if (salesMap[product.category]) {
@@ -16,7 +15,6 @@ function getPopularCategories(products) {
     }
   });
 
-  // Сортуємо категорії за кількістю продажів у порядку спадання
   const sortedCategories = Object.keys(salesMap).sort((a, b) => salesMap[b] - salesMap[a]);
 
   return sortedCategories;

@@ -5,11 +5,11 @@
 function getMostFuelEfficientCars(cars, brand) {
   const allEfficient = cars.every(car => car.fuelConsumption < 6);
 
-  // Якщо всі машини мають витрату палива менше 6, фільтруємо по бренду
+  
   if (allEfficient) {
     return cars
-      .filter(car => car.brand === brand) // Фільтруємо машини по бренду
-      .sort((a, b) => a.fuelConsumption - b.fuelConsumption); // Сортуємо по витраті палива від меншої до більшої
+      .filter(car => car.brand === brand) 
+      .sort((a, b) => a.fuelConsumption - b.fuelConsumption); 
   } else {
     return [];
   }
